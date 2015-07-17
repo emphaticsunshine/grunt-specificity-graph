@@ -32,14 +32,16 @@
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-nodeunit": "^0.3.3",
-    "grunt-jsbeautifier": "^0.2.10",
-    "opn": "^3.0.2",
-    "specificity-graph": "^0.1.2"
+    "grunt-jsbeautifier": "^0.2.10"
   },
   "peerDependencies": {
     "grunt": "~0.4.5"
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "dependencies": {
+    "opn": "^3.0.2",
+    "specificity-graph": "^0.1.2"
+  }
 }

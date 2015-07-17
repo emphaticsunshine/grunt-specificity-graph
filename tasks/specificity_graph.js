@@ -21,7 +21,7 @@ module.exports = function ( grunt ) {
 			punctuation: '.',
 			separator: ', '
 		} );
-		this.async();
+		var done = this.async();
 		// Iterate over all specified file groups.
 		this.files.forEach( function ( f ) {
 			// loop through src
@@ -48,6 +48,7 @@ module.exports = function ( grunt ) {
 						}
 					}
 				}, function () {
+          done();
 					if ( options.openInBrowser ) {
 						opn( destDir, {
 							app: 'google chrome',
