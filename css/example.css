@@ -1,0 +1,229 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+/* Modifications for respsonsive
+================================================== */
+
+.roundabout-holder {
+	list-style: none;
+	width:700px;
+	height: 330px;
+	margin: 0;
+}
+
+
+#ritaboutnav #ritaboutnavul li ul {
+	z-index: 101;
+}
+
+.roundabout-moveable-item {
+	height: 270px;
+	width: 480px;
+	font-size: 2em;
+	cursor: pointer;
+	background:url(../features/bg.jpg) no-repeat center #c0c0c0;
+	background-size: 100%;
+	vertical-align:middle;
+	overflow:hidden;
+	background-position:center;
+}
+
+#carouselShadow
+{
+	width:100%;
+	height:365px;
+	background:#000000;
+	position:absolute;
+	top: 51px;
+	z-index:2000;
+	display:none;
+	background-size: 100%;
+	padding:0;
+	margin:0;
+	text-align: center;
+}
+
+
+/* #Tablet (Portrait)
+================================================== */
+    /* Mini Roundabout View (condense it to 580px) */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.roundabout-holder {
+		width:529px;
+		height: 300px;
+		margin: 0;
+	}
+	.roundabout-moveable-item {
+		height: 204px;
+		width: 363px;
+	}
+	.roundabout-holder .buttonholder
+	{
+		margin-top: 184px;
+		width: 363px;
+		height: 100px;
+	}
+}
+
+
+/*  #Mobile (Portrait)
+================================================== */
+    /* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+	.roundabout-holder {
+	 display:none;
+	}
+	.slides .buttonholder{
+		margin-top:0px;
+		width:	290px;
+		height:163px;
+	}
+	#carouselHolder{
+		padding:0px;
+	}
+	#carouselShadow{
+	top: 73px;
+	}
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.roundabout-holder {
+	 	display:none;
+	}
+	.slides .buttonholder{
+		margin-top:0px;
+		width:	410px;
+		height:231px;
+	}
+	#carouselHolder{
+		padding:0px;
+	}
+
+}
+
+
+/* END Modifications to CSS from JP for respsonsive & flexslider
+================================================== */
+
+
+
+
+.roundabout-moveable-item img {
+    width: 100%;
+}
+
+.otherID
+{
+	height: 270px;
+	width: 480px;
+	margin-left:480px;
+}
+
+.roundabout-in-focus {
+	cursor: auto;
+	background-size:100% 100%;
+}
+.isflipping
+{
+	background-size:100% 100%;
+}
+
+.buttonholder
+{
+	width:480px;
+	text-align:right;
+	margin-top:248px;
+}
+a.roundaboutButton, .roundaboutButton
+{
+	float: right;
+	width: 65px;
+	height: 13px;
+	background: url(../images/buttonbg.png) repeat-x left;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 9px;
+	color: #FFFFFF;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	padding: 3px 0 0 0;
+	margin: 0 5px 0 0;
+	z-index: 99;
+	line-height: 10px;
+}
+@-moz-document url-prefix() {
+
+	.buttonholder
+	{
+		width:480px;
+		text-align:right;
+		margin-top:248px;
+		/*
+		position:absolute;
+		bottom:10px;
+		right:0;
+		*/
+	}
+}
+
+a.roundaboutButton:hover
+{
+	background:url(../images/buttonbg_over.png) no-repeat left #FFFFFF;
+}
+#shadow
+{
+	width:100%;
+	height:100%;
+	background:#000000;
+	position:absolute;
+	top:0;
+	z-index:100;
+	opacity:0.00;
+	display:none;
+}
+
+#video
+{
+	display:inline;
+}
+#YTVideo, iframe
+{
+	border:none;
+	margin:0;
+	padding:0;
+	frameborder:0;
+}
+.closer, a.closer, .closer:active, .closer:visited, .closer:link
+{
+	padding-bottom:345px;
+	position:absolute;
+	top:0px;
+	color:#FFFFFF;
+}
+
+.topshowcase a
+{
+	text-align:center;
+	margin-left:810px;
+	font-style:italic;
+	display:block;
+	padding:5px 7px;
+	background:#FFFFFF;
+	border: 1px solid #e3e1d2;
+	position:absolute;
+	top:400px;
+}
+
+.topshowcase a:hover
+{
+	background:#c0c0c0;
+	border: 1px solid #c0c0c0;
+	color:#333333;
+	text-decoration:none;
+}

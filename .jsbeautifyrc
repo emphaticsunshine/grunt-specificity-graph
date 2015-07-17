@@ -1,0 +1,7 @@
+{
+	"js": {
+		"jslint_happy": true,
+		"indent_with_tabs": true,
+		"space_in_paren": true
+	}
+}
