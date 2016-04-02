@@ -1,7 +1,7 @@
 {
   "name": "grunt-specificity-graph",
   "description": "Generate CSS specificity graphs using grunt.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/emphaticsunshine/grunt-specificity-graph",
   "author": {
     "name": "Mohit Seth",
