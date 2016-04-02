@@ -1,3 +1,4 @@
+### 0.3.1 - 2016-04-02
 - Accepted pull request for changing grunt version.
 
 ### 0.3.0 - 2016-04-02
