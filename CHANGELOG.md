@@ -1,0 +1,3 @@
+- Added support for grunt release.
+- Fixed async file operation.
+- Removed vanilla tests.

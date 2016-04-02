@@ -6,9 +6,8 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
-
 module.exports = function ( grunt ) {
+	'use strict';
 
 	var specificityGraph = require( 'specificity-graph' );
 	var path = require( 'path' );
@@ -35,20 +34,19 @@ module.exports = function ( grunt ) {
 						try {
 							var css = grunt.file.read( filepath );
 							var baseName = path.basename( filepath, '.css' );
-              var fullDestiNation = path.join(destDir, baseName);
+							var fullDestiNation = path.join( destDir, baseName );
 							if ( !grunt.file.exists( fullDestiNation ) ) {
 								grunt.file.mkdir( fullDestiNation );
 							}
 							specificityGraph( fullDestiNation, css, function ( directory ) {
 								grunt.log.ok( 'specificity-graph files created in ' + directory );
-								nextFile();
 							} );
 						} catch ( err ) {
 							grunt.log.error( grunt.util.error( 'Error:', err ) );
 						}
 					}
 				}, function () {
-          done();
+					done();
 					if ( options.openInBrowser ) {
 						opn( destDir, {
 							app: 'google chrome',

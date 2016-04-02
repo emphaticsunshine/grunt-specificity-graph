@@ -1,13 +1,28 @@
 {
+  "bitwise": true,
   "curly": true,
   "eqeqeq": true,
+  "es3": true,
+  "forin": true,
   "immed": true,
-  "latedef": true,
   "newcap": true,
   "noarg": true,
-  "sub": true,
+  "quotmark": true,
+  "trailing": true,
   "undef": true,
+  "unused": true,
+  "maxcomplexity": 10,
+
   "boss": true,
   "eqnull": true,
-  "node": true
+  "sub": true,
+  "browser": true,
+
+  "globals": {
+    "require": true,
+    "module": false,
+    "define": true,
+    "wsm": true,
+    "JSON":true
+  }
 }
