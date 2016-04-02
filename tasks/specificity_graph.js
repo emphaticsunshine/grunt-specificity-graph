@@ -21,41 +21,56 @@ module.exports = function ( grunt ) {
 			separator: ', '
 		} );
 		var done = this.async();
+		var fileCount = this.files.length;
+		var processedCount = 0;
 		// Iterate over all specified file groups.
 		this.files.forEach( function ( f ) {
 			// loop through src
-			var destDir = f.out;
+			var destDir = f.dest;
+
 			if ( destDir ) {
-				async.eachSeries( f.src, function ( filepath, nextFile ) {
+				if( !grunt.file.exists( destDir) ) {
+					grunt.file.mkdir( destDir );
+				}
+
+				async.eachSeries( f.src, function ( filepath, callback ) {
 					if ( !grunt.file.exists( filepath ) ) {
 						grunt.log.warn( 'Source file "' + filepath + '" not found.' );
-						nextFile();
+						callback( null, filepath );
 					} else {
 						try {
 							var css = grunt.file.read( filepath );
 							var baseName = path.basename( filepath, '.css' );
 							var fullDestiNation = path.join( destDir, baseName );
-							if ( !grunt.file.exists( fullDestiNation ) ) {
-								grunt.file.mkdir( fullDestiNation );
+							if ( grunt.file.exists( fullDestiNation ) ) {
+								grunt.file.delete( fullDestiNation );
 							}
-							specificityGraph( fullDestiNation, css, function ( directory ) {
-								grunt.log.ok( 'specificity-graph files created in ' + directory );
-							} );
+							specificityGraph( fullDestiNation, css, callback )
 						} catch ( err ) {
 							grunt.log.error( grunt.util.error( 'Error:', err ) );
+							callback( null, filepath );
 						}
 					}
-				}, function () {
-					done();
-					if ( options.openInBrowser ) {
-						opn( destDir, {
-							app: 'google chrome',
-							wait: false
-						}, function ( err ) {
-							if ( err ) {
-								opn( destDir );
+				}, function ( directory, err ) {
+					processedCount++;
+					if( err ) {
+						grunt.log.error( grunt.util.error( 'Error:', err ) );
+					}
+					else {
+						grunt.log.ok( 'Files generated in ' + directory );
+						if( processedCount >= fileCount ) {
+							if ( options.openInBrowser ) {
+								opn( destDir, {
+									app: 'google chrome',
+									wait: false
+								}, function ( err ) {
+									if ( err ) {
+										opn( destDir );
+									}
+								} );
 							}
-						} );
+							done();
+						}
 					}
 				} );
 			} else {
