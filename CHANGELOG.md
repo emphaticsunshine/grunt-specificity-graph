@@ -1,4 +1,5 @@
-### 0.4.0 - 2016-04-02
+- Accepted pull request for changing grunt version.
+
 ### 0.3.0 - 2016-04-02
 - Fixed bug with specificity-graph plugin not doing async operations correctly.
 - Changed out to use dest to avoid conflicts.
