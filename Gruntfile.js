@@ -28,7 +28,7 @@ module.exports = function ( grunt ) {
 				files: [ {
 					expand: true,
 					src: [ 'css/*.css' ],
-					out: 'specificity_graphs/'
+					dest: 'specificity_graphs/'
 				} ]
 			}
 		},

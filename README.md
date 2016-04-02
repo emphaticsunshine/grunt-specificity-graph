@@ -55,7 +55,7 @@ grunt.initConfig({
       options: {},
       files: {
         src: ["*.css"],
-        out: "dest/"
+        dest: "dest/"
     },
   }
   },
