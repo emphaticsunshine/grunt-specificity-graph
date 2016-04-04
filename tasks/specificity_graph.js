@@ -13,6 +13,7 @@ module.exports = function ( grunt ) {
 	var path = require( 'path' );
 	var opn = require( 'opn' );
 	var async = require( 'async' );
+	var path = require( 'path' );
 
 	grunt.registerMultiTask( 'specificity_graph', 'Generate CSS specificity graphs using grunt.', function () {
 		// Merge task-specific and/or target-specific options with these defaults.
@@ -29,29 +30,24 @@ module.exports = function ( grunt ) {
 			var destDir = f.dest;
 
 			if ( destDir ) {
-				if ( !grunt.file.exists( destDir ) ) {
-					grunt.file.mkdir( destDir );
-				}
 
 				async.eachSeries( f.src, function ( filepath, callback ) {
 					if ( !grunt.file.exists( filepath ) ) {
 						grunt.log.warn( 'Source file "' + filepath + '" not found.' );
-						callback( null, filepath );
+						callback( filepath, 'File not found' );
 					} else {
 						try {
 							var css = grunt.file.read( filepath );
 							var baseName = path.basename( filepath, '.css' );
 							var fullDestiNation = path.join( destDir, baseName );
-							if ( grunt.file.exists( fullDestiNation ) ) {
-								grunt.file.delete( fullDestiNation );
-							}
-							specificityGraph( fullDestiNation, css, callback )
+							specificityGraph( destDir, css, callback )
 						} catch ( err ) {
-							grunt.log.error( grunt.util.error( 'Error:', err ) );
-							callback( null, filepath );
+							console.log( err );
+							callback( filepath, err );
 						}
 					}
 				}, function ( directory, err ) {
+					var parentDir;
 					processedCount++;
 					if ( err ) {
 						grunt.log.error( grunt.util.error( 'Error:', err ) );
@@ -59,12 +55,13 @@ module.exports = function ( grunt ) {
 						grunt.log.ok( 'Files generated in ' + directory );
 						if ( processedCount >= fileCount ) {
 							if ( options.openInBrowser ) {
-								opn( destDir, {
+								parentDir = path.resolve( destDir, '../' );
+								opn( parentDir, {
 									app: 'google chrome',
 									wait: false
 								}, function ( err ) {
 									if ( err ) {
-										opn( destDir );
+										opn( parentDir );
 									}
 								} );
 							}

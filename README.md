@@ -54,6 +54,8 @@ grunt.initConfig({
     task: {
       options: {},
         files: [ {
+          expand: true,
+          flatten: true,
           src: ["*.css"],
           dest: "dest/"
       } ]
@@ -62,5 +64,6 @@ grunt.initConfig({
 });
 ```
 
+Note: Recommended to use flatten option.
 ## Release History
 0.1.0 Created grunt plugin for generating specificity_graph
