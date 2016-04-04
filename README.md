@@ -53,11 +53,11 @@ grunt.initConfig({
   specificity_graph: {
     task: {
       options: {},
-      files: {
-        src: ["*.css"],
-        dest: "dest/"
-    },
-  }
+        files: [ {
+          src: ["*.css"],
+          dest: "dest/"
+      } ]
+    }
   },
 });
 ```

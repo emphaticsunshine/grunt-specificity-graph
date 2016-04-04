@@ -26,7 +26,6 @@ module.exports = function ( grunt ) {
 					openInBrowser: true
 				},
 				files: [ {
-					expand: true,
 					src: [ 'css/*.css' ],
 					dest: 'specificity_graphs/'
 				} ]

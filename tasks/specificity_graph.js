@@ -29,7 +29,7 @@ module.exports = function ( grunt ) {
 			var destDir = f.dest;
 
 			if ( destDir ) {
-				if( !grunt.file.exists( destDir) ) {
+				if ( !grunt.file.exists( destDir ) ) {
 					grunt.file.mkdir( destDir );
 				}
 
@@ -53,12 +53,11 @@ module.exports = function ( grunt ) {
 					}
 				}, function ( directory, err ) {
 					processedCount++;
-					if( err ) {
+					if ( err ) {
 						grunt.log.error( grunt.util.error( 'Error:', err ) );
-					}
-					else {
+					} else {
 						grunt.log.ok( 'Files generated in ' + directory );
-						if( processedCount >= fileCount ) {
+						if ( processedCount >= fileCount ) {
 							if ( options.openInBrowser ) {
 								opn( destDir, {
 									app: 'google chrome',
