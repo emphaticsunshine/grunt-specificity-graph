@@ -32,7 +32,7 @@
     "grunt-release": "^0.13.0"
   },
   "dependencies": {
-    "specificity-graph": "emphaticsunshine/specificity-graph#a4f4fc8",
+    "specificity-graph": "emphaticsunshine/specificity-graph#4076f10",
     "opn": "^4.0.1",
     "async": "^2.0.0-rc.2",
     "bluebird": "^3.3.4"
