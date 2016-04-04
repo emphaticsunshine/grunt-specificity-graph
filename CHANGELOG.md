@@ -1,3 +1,4 @@
+### 0.3.3 - 2016-04-04
 - Fixed grunt task.
 - Fixed readme.
 
