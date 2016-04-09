@@ -1,0 +1,20 @@
+default:
+  - 'lint'
+
+hooks:
+  decription: 'Binds hooks'
+  tasks:
+    - 'githooks'
+
+
+lint:
+  description: 'Runs the jshint and jsbeautifier verify tasks.'
+  tasks:
+    - 'jshint'
+    - 'jsbeautifier:verify'
+
+
+test:
+  description: 'Checks for code sanity.'
+  tasks:
+    - 'lint'
