@@ -2,6 +2,8 @@
 
 > Generate CSS specificity graphs using grunt.
 
+[![Build Status](https://travis-ci.org/emphaticsunshine/grunt-specificity-graph.svg?branch=master)](https://travis-ci.org/emphaticsunshine/grunt-specificity-graph)
+
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
 
