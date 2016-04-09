@@ -1,4 +1,7 @@
-### 0.3.6 - 2016-04-04
+- Added travis config file.
+- Cleaned up gruntfile, added aliases.
+- Added test task.
+
 ### 0.3.4 - 2016-04-04
 - Fixed dest issue.
 
