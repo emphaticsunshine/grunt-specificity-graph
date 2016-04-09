@@ -2,6 +2,7 @@
 
 > Generate CSS specificity graphs using grunt.
 
+[![NPM version](https://www.npmjs.com/package/grunt-specificity-graph.svg)](https://www.npmjs.com/package/grunt-specificity-graph)
 [![Build Status](https://travis-ci.org/emphaticsunshine/grunt-specificity-graph.svg?branch=master)](https://travis-ci.org/emphaticsunshine/grunt-specificity-graph)
 
 ## Getting Started
